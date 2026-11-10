@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -261,22 +260,22 @@ footer {
   <div class="gallery">
 
     <div class="photo">
-      <img src="images/photo1.jpg" alt="Kenangan 1">
+      <img src="IMG_1522.jpeg" alt="Kenangan 1">
       <p>Our First Memory 💗</p>
     </div>
 
     <div class="photo">
-      <img src="images/photo2.jpg" alt="Kenangan 2">
+      <img src="IMG_1549.jpeg" alt="Kenangan 2">
       <p>Beautiful Moments 🌷</p>
     </div>
 
     <div class="photo">
-      <img src="images/photo3.jpg" alt="Kenangan 3">
+      <img src="IMG_5512.jpeg" alt="Kenangan 3">
       <p>Little Happiness 🧸</p>
     </div>
 
     <div class="photo">
-      <img src="images/photo4.jpg" alt="Kenangan 4">
+      <img src="IMG_8168.jpeg" alt="Kenangan 4">
       <p>Forever Memories 💕</p>
     </div>
 
@@ -385,7 +384,7 @@ footer {
 </div>
 
 <audio id="music" loop>
-  <source src="music/song.mp3" type="audio/mpeg">
+  <source src="Kisah Cinta Kita - HAFIZ SUIP [ Lirik ]].mp3" type="audio/mpeg">
 </audio>
 
 <footer>
@@ -398,8 +397,8 @@ footer {
 
 <script>
 
-// ANNIVERSARY DATE
-const startDate = new Date(2024,10,10);
+// ANNIVERSARY DATE (10 November 2024)
+const startDate = new Date(2024, 9, 10);
 
 function updateDays() {
 
@@ -471,7 +470,7 @@ async function toggleMusic() {
       await music.play();
       button.textContent = "⏸ Pause Music";
     } catch(error) {
-      alert("Sila semak fail muzik song.mp3");
+      alert("Muzik sedang memuatkan atau tidak dapat dimainkan. Sila tekan sekali lagi.");
     }
 
   } else {
@@ -519,3 +518,4 @@ setInterval(()=>createHearts(),1200);
 
 </body>
 </html>
+
