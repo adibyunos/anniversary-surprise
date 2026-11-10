@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe4ec">
+
+<title>Our Anniversary ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg,#fff0f5,#ffdce8,#fff5f0);
+  color: #914b65;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 75px 20px;
+  text-align: center;
+}
+
+h1,h2 {
+  font-family: 'Playfair Display',serif;
+}
+
+h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.9;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.hero-content {
+  max-width: 550px;
+}
+
+.heart {
+  font-size: 65px;
+  animation: beat 1.3s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.25); }
+}
+
+.hero h1 {
+  font-size: clamp(43px,10vw,65px);
+  color: #c65d83;
+  margin: 20px 0;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #b47b91;
+  margin-bottom: 30px;
+}
+
+button {
+  background: linear-gradient(135deg,#ed8eaa,#d66e91);
+  color: white;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 7px 18px #d8789640;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+.card {
+  max-width: 650px;
+  margin: auto;
+  padding: 30px 22px;
+  background: #ffffffd9;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px #c77e9320;
+}
+
+.counter {
+  font-family: 'Playfair Display',serif;
+  font-size: 80px;
+  color: #d66e91;
+  font-weight: bold;
+}
+
+.gallery {
+  max-width: 850px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.photo {
+  background: white;
+  padding: 9px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px #a75b7520;
+}
+
+.photo img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.photo p {
+  font-family: 'Playfair Display',serif;
+  padding: 10px 0 5px;
+}
+
+.letter {
+  display: none;
+  background: #fff5f8;
+  padding: 22px;
+  border-radius: 15px;
+  text-align: left;
+  margin-top: 20px;
+  line-height: 2;
+  white-space: pre-line;
+}
+
+.surprise {
+  display: none;
+  margin-top: 25px;
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  from {opacity:0;transform:translateY(15px);}
+  to {opacity:1;transform:translateY(0);}
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  animation: float 7s linear forwards;
+  z-index: 10;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.music-control {
+  position: fixed;
+  right: 15px;
+  bottom: 18px;
+  z-index: 20;
+}
+
+.music-control button {
+  margin: 0;
+  padding: 12px 17px;
+}
+
+footer {
+  padding: 35px 15px;
+  text-align: center;
+  font-size: 12px;
+  color: #b47b91;
+}
+
+@media(max-width:400px) {
+  h2 {font-size:29px;}
+  .gallery {gap:10px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="heart">💗</div>
+
+    <p class="subtitle">A SPECIAL DAY FOR US</p>
+
+    <h1>Happy<br>Anniversary!</h1>
+
+    <p>
+      Untuk seseorang yang sangat istimewa.
+      Terima kasih kerana menjadi sebahagian
+      daripada perjalanan hidup ini.
+    </p>
+
+    <button onclick="goTo('counter')">
+      Open Our Story 💌
+    </button>
+
+  </div>
+</section>
+
+<!-- DAYS COUNTER -->
+
+<section id="counter">
+
+  <h2>Our Journey Together</h2>
+
+  <p class="subtitle">
+    Bermula pada 10 November 2024 ❤️
+  </p>
+
+  <div class="card">
+
+    <div class="counter" id="days">0</div>
+
+    <h3>HARI BERSAMA</h3>
+
+    <p style="margin-top:20px">
+      Setiap hari bersama adalah kenangan
+      yang sangat bermakna.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- PHOTO GALLERY -->
+
+<section id="gallery">
+
+  <h2>Our Memories 📸</h2>
+
+  <p class="subtitle">
+    Kenangan kecil yang akan sentiasa diingati.
+  </p>
+
+  <div class="gallery">
+
+    <div class="photo">
+      <img src="images/photo1.jpg" alt="Kenangan 1">
+      <p>Our First Memory 💗</p>
+    </div>
+
+    <div class="photo">
+      <img src="images/photo2.jpg" alt="Kenangan 2">
+      <p>Beautiful Moments 🌷</p>
+    </div>
+
+    <div class="photo">
+      <img src="images/photo3.jpg" alt="Kenangan 3">
+      <p>Little Happiness 🧸</p>
+    </div>
+
+    <div class="photo">
+      <img src="images/photo4.jpg" alt="Kenangan 4">
+      <p>Forever Memories 💕</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SECRET LETTER -->
+
+<section id="letter-section">
+
+  <h2>A Letter For You 💌</h2>
+
+  <p class="subtitle">
+    Ada sesuatu yang ingin disampaikan...
+  </p>
+
+  <div class="card">
+
+    <div style="font-size:50px">✉️</div>
+
+    <p>
+      Surat kecil yang ditulis khas untuk awak.
+    </p>
+
+    <button onclick="openLetter()">
+      Buka Surat Rahsia ❤️
+    </button>
+
+    <div class="letter" id="letter">
+
+      <h3>Untuk Awak, ❤️</h3>
+
+      Terima kasih kerana hadir dalam hidup ini.
+
+      Terima kasih untuk setiap kenangan,
+      gelak tawa dan masa yang kita luangkan bersama.
+
+      Saya tahu perjalanan kita tidak semestinya
+      sempurna, tetapi saya berharap kita akan
+      terus belajar memahami dan menghargai
+      antara satu sama lain.
+
+      Semoga lebih banyak kenangan indah
+      menanti kita pada masa akan datang.
+
+      Happy Anniversary!
+
+      With love,
+      ❤️
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- INTERACTIVE SURPRISE -->
+
+<section id="surprise-section">
+
+  <h2>One Last Surprise 🎁</h2>
+
+  <p class="subtitle">
+    Ada satu lagi kejutan untuk awak.
+  </p>
+
+  <div class="card">
+
+    <div style="font-size:55px">🎀</div>
+
+    <button onclick="showSurprise()">
+      Click For Surprise 💗
+    </button>
+
+    <div class="surprise" id="surprise">
+
+      <h2>You're Special! 💖</h2>
+
+      <p>
+        Terima kasih kerana mencipta
+        begitu banyak kenangan indah.
+
+        Semoga hubungan ini terus dipenuhi
+        kebahagiaan, kesabaran dan kasih sayang.
+      </p>
+
+      <div style="font-size:50px">
+        💗🌷💗
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MUSIC -->
+
+<div class="music-control">
+
+  <button onclick="toggleMusic()" id="musicButton">
+    🎵 Play Music
+  </button>
+
+</div>
+
+<audio id="music" loop>
+  <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+
+<footer>
+  Made with love ❤️
+  <br><br>
+  10 November 2024
+  <br>
+  Our Little Story 💗
+</footer>
+
+<script>
+
+// ANNIVERSARY DATE
+const startDate = new Date(2024,10,10);
+
+function updateDays() {
+
+  const today = new Date();
+
+  const start = new Date(
+    startDate.getFullYear(),
+    startDate.getMonth(),
+    startDate.getDate()
+  );
+
+  const current = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate()
+  );
+
+  const difference = Math.floor(
+    (current-start)/(1000*60*60*24)
+  );
+
+  document.getElementById("days").textContent =
+    difference >= 0 ? difference : 0;
+
+}
+
+updateDays();
+
+// SCROLL
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({
+    behavior:"smooth"
+  });
+}
+
+// SECRET LETTER
+function openLetter() {
+
+  const letter = document.getElementById("letter");
+
+  letter.style.display =
+    letter.style.display === "block"
+    ? "none"
+    : "block";
+
+}
+
+// SURPRISE
+function showSurprise() {
+
+  document.getElementById("surprise")
+    .style.display = "block";
+
+  createHearts(20);
+
+}
+
+// MUSIC
+const music = document.getElementById("music");
+
+async function toggleMusic() {
+
+  const button =
+    document.getElementById("musicButton");
+
+  if(music.paused) {
+
+    try {
+      await music.play();
+      button.textContent = "⏸ Pause Music";
+    } catch(error) {
+      alert("Sila semak fail muzik song.mp3");
+    }
+
+  } else {
+
+    music.pause();
+    button.textContent = "🎵 Play Music";
+
+  }
+
+}
+
+// FLOATING HEARTS
+function createHearts(amount=1) {
+
+  for(let i=0;i<amount;i++) {
+
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+
+    const emojis = ["💗","💕","❤️","💖","🌸"];
+
+    heart.textContent =
+      emojis[Math.floor(Math.random()*emojis.length)];
+
+    heart.style.left = Math.random()*100+"vw";
+
+    heart.style.fontSize =
+      (15+Math.random()*20)+"px";
+
+    heart.style.animationDuration =
+      (5+Math.random()*4)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),9500);
+
+  }
+
+}
+
+setInterval(()=>createHearts(),1200);
+
+</script>
+
+</body>
+</html>
